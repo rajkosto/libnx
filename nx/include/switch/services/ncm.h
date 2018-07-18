@@ -84,3 +84,9 @@ Result ncmContentMetaDatabaseGetLatestContentMetaKey(NcmContentMetaDatabase* db,
 Result ncmContentMetaDatabaseListApplication(NcmContentMetaDatabase* db, u8 filter, NcmApplicationContentMetaKey* outBuf, size_t outBufSize, u32* numEntriesWritten, u32* numEntriesTotal);
 Result ncmContentMetaDatabaseHas(NcmContentMetaDatabase* db, const NcmMetaRecord* record, bool* out);
 Result ncmContentMetaDatabaseCommit(NcmContentMetaDatabase* db);
+
+Result ncmCreatePlaceHolder(NcmContentStorage* cs, const NcmNcaId* placeholderId, const NcmNcaId* registeredId, u64 size);
+Result ncmDeletePlaceHolder(NcmContentStorage* cs, const NcmNcaId* placeholderId);
+Result ncmWritePlaceHolder(NcmContentStorage* cs, const NcmNcaId* placeholderId, u64 offset, void* buffer, size_t bufSize);
+Result ncmContentStorageRegister(NcmContentStorage* cs, const NcmNcaId* placeholderId, const NcmNcaId* registeredId);
+Result ncmDelete(NcmContentStorage* cs, const NcmNcaId* registeredId);
